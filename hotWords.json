@@ -1,0 +1,101 @@
+{
+  "rule_metadata": {
+    "version": "5.0.0",
+    "description": "Granular, weighted token matrix utilizing multi-word phrasing for high-fidelity phishing detection.",
+    "last_updated": "2026-06-12"
+  },
+  "high_risk_words": {
+    "urgency_indicators": {
+      "description": "Words designed to induce panic. Common words are scored low; aggressive phrases are scored high.",
+      "tokens": {
+        "today": 1, "now": 1, "soon": 1, "asap": 2, "urgent": 5, "attention": 5, 
+        "immediately": 6, "deadline": 6, "expires": 6, "overdue": 7, "final notice": 12,
+        "action required": 12, "act immediately": 15, "respond immediately": 12
+      }
+    },
+    "action_indicators": {
+      "description": "Verbs demanding action. Everyday verbs are low-risk unless paired with other categories.",
+      "tokens": {
+        "view": 1, "open": 1, "reply": 1, "review": 2, "update": 3, "confirm": 3, 
+        "click": 4, "download": 4, "login": 5, "log-in": 5, "sign in": 5, 
+        "verify": 6, "authenticate": 6, "click here": 8, "verify account": 15
+      }
+    },
+    "financial_lures": {
+      "description": "Money-related hooks. Standard business terms are low; specific scam triggers are high.",
+      "tokens": {
+        "bill": 2, "quote": 2, "receipt": 3, "statement": 3, "invoice": 4, 
+        "payment": 4, "payroll": 5, "salary": 5, "refund": 6, "deposit": 6,
+        "wire transfer": 12, "ach transfer": 10, "routing number": 15, "overpayment": 12,
+        "unpaid invoice": 10
+      }
+    },
+    "coercion_and_fear": {
+      "description": "Threats of lockouts or legal action. High scores for aggressive, definitive terms.",
+      "tokens": {
+        "locked": 6, "frozen": 6, "restricted": 6, "suspended": 8, "breach": 8,
+        "compromised": 10, "unauthorized": 10, "illegal": 10, "violation": 10, 
+        "terminated": 12, "lawsuit": 15, "subpoena": 15, "account suspended": 16,
+        "unauthorized access": 18, "legal action": 18
+      }
+    },
+    "credential_harvesting": {
+      "description": "Direct attempts to steal login materials or bypass 2FA.",
+      "tokens": {
+        "password": 5, "credentials": 6, "passcode": 8, "2fa": 8, "mfa": 8, "otp": 8,
+        "reset password": 10, "authenticator": 10, "one-time passcode": 12,
+        "recovery phrase": 15, "bypass": 15, "verify identity": 12
+      }
+    },
+    "crypto_and_web3": {
+      "description": "Highly targeted crypto lures. Strong penalty for wallet and seed phrase terminology.",
+      "tokens": {
+        "crypto": 5, "nft": 5, "bitcoin": 8, "ethereum": 8, "wallet": 8, "metamask": 10,
+        "coinbase": 10, "binance": 10, "trustwallet": 12, "airdrop": 15, 
+        "seed phrase": 20, "mnemonic": 18, "connect wallet": 18, "drainer": 20
+      }
+    },
+    "corporate_and_hr": {
+      "description": "Spear-phishing lures targeting corporate employees.",
+      "tokens": {
+        "memo": 2, "feedback": 2, "handbook": 3, "benefits": 3, "proposal": 3, 
+        "docusign": 6, "sharepoint": 6, "onedrive": 6, "dropbox": 6, 
+        "severance": 10, "termination": 12, "mandatory training": 10, 
+        "direct deposit update": 18, "w-2": 12
+      }
+    },
+    "shipping_and_delivery": {
+      "description": "Smishing and email lures claiming a package is stuck.",
+      "tokens": {
+        "usps": 3, "ups": 3, "fedex": 3, "dhl": 3, "parcel": 4, "delivery": 4, 
+        "tracking": 5, "reschedule": 6, "pending delivery": 8, "customs fee": 12,
+        "stuck in transit": 12, "undeliverable": 15, "redelivery fee": 15
+      }
+    },
+    "tech_support_scams": {
+      "description": "Fake invoices for antivirus renewals or tech support.",
+      "tokens": {
+        "subscription": 4, "renewed": 4, "charged": 5, "norton": 5, "mcafee": 5, 
+        "geek squad": 8, "paypal": 8, "lifelock": 8, "auto-renew": 10, 
+        "antivirus": 10, "malware": 12, "trojan": 12, "your account has been charged": 18,
+        "call to cancel": 18, "refund processing": 15
+      }
+    },
+    "gift_card_and_advance_fee": {
+      "description": "Classic advance fee and gift card scams.",
+      "tokens": {
+        "kindly": 8, "western union": 12, "lottery": 15, "million dollars": 15,
+        "gift card": 18, "apple card": 18, "steam card": 18, "google play card": 18,
+        "buy me a gift card": 20, "do me a favor": 12, "are you at your desk": 10
+      }
+    },
+    "extortion_and_blackmail": {
+      "description": "Sextortion scams claiming to have hacked a webcam or private data.",
+      "tokens": {
+        "webcam": 15, "keylogger": 15, "pegasus": 15, "darkweb": 15, "footage": 15,
+        "hacked": 15, "reputation": 15, "masturbating": 20, "porn": 20, 
+        "intimate": 20, "dirty secret": 20, "record you": 20
+      }
+    }
+  }
+}

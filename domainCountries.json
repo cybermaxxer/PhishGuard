@@ -1,0 +1,22 @@
+[
+  { "country": "Russia", "risk_score": 10 },
+  { "country": "China", "risk_score": 10 },
+  { "country": "Iran", "risk_score": 5 },
+  { "country": "North Korea", "risk_score": 10 },
+  { "country": "Belarus", "risk_score": 5 },
+  { "country": "Ukraine", "risk_score": 3 },
+  { "country": "Syria", "risk_score": 5 },
+  { "country": "Venezuela", "risk_score": 4 },
+  { "country": "Cuba", "risk_score": 4 },
+  { "country": "Myanmar", "risk_score": 5 },
+  { "country": "Afghanistan", "risk_score": 5 },
+  { "country": "Yemen", "risk_score": 5 },
+  { "country": "Libya", "risk_score": 4 },
+  { "country": "Sudan", "risk_score": 4 },
+  { "country": "Somalia", "risk_score": 4 },
+  { "country": "Iraq", "risk_score": 4 },
+  { "country": "Eritrea", "risk_score": 4 },
+  { "country": "Zimbabwe", "risk_score": 3 },
+  { "country": "North Macedonia", "risk_score": 2 },
+  { "country": "Moldova", "risk_score": 2 }
+]
